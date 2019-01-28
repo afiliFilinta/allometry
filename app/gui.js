@@ -217,7 +217,19 @@ define(() => {
         var image = makeImage("renderIcon", "edit", "img/render.png");
         button.appendChild(image);
         sidebarDiv.appendChild(button);
-        button.addEventListener("click", renderButton);
+        button.addEventListener("click", () => {
+            const params = {
+                m1: document.getElementById("m1").getAttribute("value"),
+                n11: document.getElementById("n11").getAttribute("value"),
+                n12: document.getElementById("n12").getAttribute("value"),
+                n13: document.getElementById("n13").getAttribute("value"),
+                m2: document.getElementById("m2").getAttribute("value"),
+                n21: document.getElementById("n21").getAttribute("value"),
+                n22: document.getElementById("n22").getAttribute("value"),
+                n23: document.getElementById("n23").getAttribute("value"),
+            }
+            renderButton(params);
+        });
 
         // Export Button 
 
